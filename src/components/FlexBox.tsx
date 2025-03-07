@@ -46,7 +46,7 @@ export const FlexBox = ({
         baseClass,
         (hover || edit) && (edit ? "pt-30" : "pt-10"),
         id === "INITIAL" && initialClass
-      )} ${className}`}
+      )} ${id === "FAKE" ? classNameFromParent : className}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -89,6 +89,7 @@ export const FlexBox = ({
             </button>
           </div>
         </div>
+
         {edit && (
           <motion.div
             initial={{ opacity: 0 }}
